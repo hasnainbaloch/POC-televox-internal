@@ -1,0 +1,90 @@
+@use "../mixins.scss" as *;
+@use "../colors.scss" as *;
+
+.common-modal-footer {
+  @include flexBox(row-reverse, flex-start, flex-end);
+
+  padding: 0 3rem 3rem;
+  border: none;
+  text-align: left;
+
+  .ant-btn {
+    margin-left: 0;
+    border-radius: 0.5rem;
+
+    > span {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    &.ant-btn-primary {
+      background-color: $primary-button;
+      border-color: $primary-button;
+      margin-right: 0.6rem;
+
+      > span {
+        color: $white-color;
+      }
+
+      &.disable-button {
+        background-color: $primary-button;
+        border-color: $primary-button;
+        opacity: 0.5;
+        pointer-events: none;
+
+        > span {
+          color: $white-color;
+        }
+      }
+
+      &:hover,
+      :focus {
+        transition: all 0.3s linear;
+        opacity: 0.8;
+      }
+
+      &.deactivate-button {
+        background-color: $maroon-flush;
+        border: solid 0.1rem $maroon-flush;
+      }
+    }
+
+    &.cancel-button {
+      transition: all 0.3s linear;
+      background-color: $white-color;
+      border: 0.1rem solid $primary-button;
+
+      > span {
+        color: $primary-button;
+      }
+
+      &:hover {
+        transition: all 0.3s linear;
+        background-color: $primary-blue-one;
+        border-color: $primary-button;
+
+        > span {
+          color: $primary-button;
+        }
+      }
+
+      &.disable-button {
+        opacity: 0.5;
+        background: $white-color;
+        border-color: $primary-button;
+      }
+
+      &.cancel-deactivate-button {
+        border: solid 0.1rem $maroon-flush;
+
+        > span {
+          color: $maroon-flush;
+        }
+
+        &:hover {
+          background-color: rgba($maroon-flush, 0.1);
+        }
+      }
+    }
+  }
+}

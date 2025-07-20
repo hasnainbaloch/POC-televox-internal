@@ -1,0 +1,160 @@
+// Input Component Styles
+// Uses login design tokens and existing SCSS architecture
+
+@use "sass:color";
+@use "../../../styles/colors.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+@use "../../../styles/breakpoints.scss" as *;
+
+.ui-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+
+  &--error {
+    .ui-input {
+      border-color: $failed-red;
+    }
+  }
+}
+
+.ui-input__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: #777777;
+  margin-bottom: 8px;
+  display: block;
+  text-align: left;
+
+  .ui-input__required {
+    color: $failed-red;
+    margin-left: 0.2rem;
+  }
+}
+
+.ui-input__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ui-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #2a2d2e;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  transition: border-color 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  &::placeholder {
+    color: #bebfc0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+
+  &:focus,
+  &--focused {
+    border-color: #00b4e5;
+  }
+
+  &:hover:not(:focus):not(:disabled) {
+    border-color: #999999;
+  }
+
+  &--disabled {
+    background-color: $alabaster-low;
+    color: $sonic-silver;
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: $sonic-silver;
+    }
+  }
+
+  &--error {
+    border-color: $failed-red;
+
+    &:focus {
+      @include boxShadow(0 0 0 3px rgba($failed-red, 0.1));
+    }
+  }
+
+  &--with-icon {
+    &.ui-input--icon-left {
+      padding-left: 2.5rem;
+    }
+
+    &.ui-input--icon-right {
+      padding-right: 2.5rem;
+    }
+  }
+
+  // Password input specific styling
+  &[type="password"] {
+    padding-right: 2.5rem;
+  }
+}
+
+.ui-input__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $login-text-secondary;
+  font-size: 16px;
+  pointer-events: none;
+  z-index: 1;
+
+  &--left {
+    left: 0.75rem;
+  }
+
+  &--right {
+    right: 0.75rem;
+  }
+
+  &--password {
+    right: 0.75rem;
+    pointer-events: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgba($login-primary, 0.1);
+      color: $login-primary;
+    }
+
+    &:focus {
+      outline: 2px solid $login-primary;
+      outline-offset: 1px;
+    }
+  }
+}
+
+.ui-input__error {
+  @include fontValues(12px, 400, normal, normal, 1.4, normal);
+  color: $failed-red;
+  margin-top: 0.25rem;
+  display: block;
+}

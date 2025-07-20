@@ -1,0 +1,214 @@
+@use "../commons.scss" as *;
+
+.ant-select:not(.ant-pagination-options-size-changer, .outreach-custom-select) {
+  min-height: 3.6rem;
+  background-color: $white-color;
+    width: 31rem;
+  &:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      border-radius: 0.5rem;
+    }
+  }
+  &.small-input {
+    width: 15rem;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+
+  &.ant-tree-select {
+    height: 100%;
+  }
+
+  &.shift-schedule {
+    .ant-select-selection-item {
+      font-weight: normal;
+      .ant-select-selection-item-remove {
+        margin-bottom: 4px;
+        .anticon {
+          vertical-align: 0px;
+        }
+      }
+    }
+  }
+
+  &.ant-select-single,
+  &.ant-select-multiple {
+    &.common-select-field {
+      width: 100%;
+
+      .ant-select-selector {
+        border-radius: 0.5rem;
+        height: 3.6rem;
+      }
+    }
+
+    &.ant-tree-select {
+      .ant-select-selector {
+        height: 100%;
+        min-height: 3.6rem;
+      }
+    }
+  }
+
+  .ant-select-selector,
+  &.ant-select-single:not(.ant-select-customize-input):not(.compact)
+    .ant-select-selector {
+    @include flexBox(row, center);
+
+    border-radius: 0.5rem;
+    height: 3.6rem;
+
+    .ant-select-selection-search {
+      .ant-select-selection-search-input {
+        font-size: 1.4rem;
+        font-weight: normal;
+        color: $darker-gray;
+      }
+    }
+
+    .ant-select-selection-item {
+      font-weight: normal;
+
+      .dropdown-color-item {
+        width: 100%;
+        height: 2rem;
+        position: relative;
+        top: 1.5rem;
+      }
+      // .ant-select-selection-item-remove {
+      //   margin-bottom: 4px;
+      //   .anticon {
+      //     vertical-align: 0px;
+      //   }
+      // }
+    }
+
+    .ant-select-selection-placeholder {
+      font-size: 1.4rem;
+      font-weight: normal;
+      opacity: 0.3;
+      color: $darker-gray;
+    }
+  }
+
+  .ant-select-arrow {
+    .anticon.anticon-down {
+      > svg {
+        transition: all 0.3s linear;
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &.ant-select-focused {
+    box-shadow: none !important;
+    border: none;
+
+    .ant-select-selector {
+      border: 0.1rem solid $primary-blue !important;
+      box-shadow: none !important;
+    }
+
+    &:not(.ant-select-disabled):hover .ant-select-selector {
+      box-shadow: none;
+      border: 0.1rem solid $primary-blue !important;
+    }
+  }
+
+  &.ant-select-open {
+    .ant-select-dropdown {
+      opacity: 1 !important;
+      pointer-events: unset !important;
+      animation: showDropdown 0.2s linear forwards !important;
+
+      &.slide-up-enter {
+        animation: none !important;
+      }
+    }
+
+    .ant-select-arrow {
+      .anticon.anticon-down {
+        > svg {
+          transition: all 0.3s linear;
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &:not(.ant-select-disabled):hover .ant-select-selector {
+    box-shadow: none;
+    border: 0.1rem solid $alto !important;
+  }
+
+  &.error-box {
+    &:not(.ant-select-disabled):hover .ant-select-selector {
+      border-color: $maroon-flush !important;
+    }
+
+    .ant-select-selector {
+      border-color: $maroon-flush !important;
+    }
+  }
+}
+
+//for select dropdown
+.ant-select-dropdown {
+  padding: 1rem 0 !important;
+
+  .rc-virtual-list {
+    .rc-virtual-list-holder {
+      .rc-virtual-list-holder-inner {
+        .ant-select-item.ant-select-item-option {
+          &:hover {
+            background: $primary-blue-one;
+          }
+
+          &.ant-select-item-option-active {
+            background: $primary-blue-one;
+          }
+
+          &.ant-select-item-option-selected {
+            background: $primary-blue-one;
+
+            .ant-select-item-option-content {
+              font-weight: normal;
+            }
+
+            .ant-select-item-option-state {
+              color: $tick-blue-color;
+            }
+          }
+
+          &.unclickable-option {
+            pointer-events: none;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-select-item {
+    .ant-select-item-option-content {
+      width: 100%;
+      height: 100%;
+
+      .dropdown-color-item {
+        width: 28.6rem;
+        height: 2.2rem;
+      }
+    }
+
+    &.filters-dropdown {
+      padding: 0.5rem 0 0.5rem 2rem;
+
+      .ant-select-item-option-content {
+        font-size: 1.3rem;
+        color: $black-color;
+      }
+    }
+  }
+}

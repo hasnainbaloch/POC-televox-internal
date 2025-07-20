@@ -1,0 +1,77 @@
+@use "../mixins.scss" as *;
+@use "../colors.scss" as *;
+
+.ant-card {
+  .ant-card-head {
+    min-height: 6.4rem;
+    border-bottom: none;
+
+    .ant-card-head-wrapper {
+      min-height: 6.4rem;
+
+      .ant-card-head-title {
+        @include flexBox(row, center);
+
+        min-height: 6.4rem;
+        height: 6.3rem;
+        padding: 0;
+        font-size: 2.4rem;
+        font-weight: bold;
+        color: $darker-gray;
+
+        .card-custom-heading {
+          font-size: 2.4rem;
+          font-weight: bold;
+          color: $darker-gray;
+          margin: 0;
+          margin-right: 2rem;
+          position: relative;
+
+          &:not(.hide-separator) {
+            &:after {
+              position: absolute;
+              height: 2rem;
+              top: 1rem;
+              right: -1.2rem;
+              border-right: 0.2rem solid $mercury;
+
+              content: "";
+            }
+          }
+        }
+
+        .card-custom-length {
+          margin: 0;
+        }
+
+        .card-custom-unread {
+          color: $darker-gray;
+          padding: 0.8rem 1rem;
+          font-size: 1.2rem;
+          background-color: $water;
+          border-radius: 0.4rem;
+          font-weight: normal;
+          margin-left: 0.8rem;
+          line-height: 100%;
+        }
+      }
+
+      .ant-card-extra {
+        padding: 0;
+      }
+    }
+  }
+
+  .ant-card-body {
+    padding: 0;
+
+    .generic-forms-wrapper .masked-container {
+       .ant-input-suffix {
+        visibility: unset;
+      }
+      .gray-color {
+        color: $silver-sand
+      }
+    }
+  }
+}

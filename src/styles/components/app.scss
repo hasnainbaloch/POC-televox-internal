@@ -1,0 +1,74 @@
+// App Component Styles
+// Uses the existing color variables and theming system
+
+@use "../mixins.scss" as *;
+@use "../colors.scss" as *;
+@use "../breakpoints.scss" as *;
+
+.App {
+  text-align: center;
+}
+
+.site-layout {
+  .site-layout-background {
+    background: $white-color;
+  }
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+}
+
+.ant-layout-header {
+  padding: 0;
+  background: $white-color;
+  box-shadow: 0 1px 4px $sidebar-shadow;
+}
+
+.ant-layout-content {
+  margin: 24px 16px;
+  padding: 24px;
+  background: $white-color;
+  min-height: 280px;
+
+  // Responsive adjustments using existing breakpoints
+  @media (max-width: $breakpoint-mobile-max) {
+    margin: 16px 8px;
+    padding: 16px;
+  }
+}
+
+.ant-card {
+  border-radius: 8px;
+  box-shadow: 
+    0 1px 2px -2px $card-shadow,
+    0 3px 6px 0 $silver-shadow-dark,
+    0 5px 12px 4px $popup-shadow;
+
+  &-head-title {
+    font-weight: 600;
+  }
+}
+
+// Button animations with nested hover state
+.ant-btn {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+// Menu styling using existing theme variables
+.ant-menu-dark {
+  .ant-menu-item-selected {
+    background-color: $primary-blue;
+  }
+
+  .ant-menu-item:hover {
+    background-color: $primary-blue-one;
+  }
+} 

@@ -1,0 +1,187 @@
+// Checkbox Component Styles
+// Uses login design tokens and existing SCSS architecture
+
+@use "../../../styles/colors.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+@use "../../../styles/breakpoints.scss" as *;
+
+.ui-checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  height: 40px;
+  position: relative;
+
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--error {
+    .ui-checkbox {
+      border-color: $failed-red;
+    }
+  }
+}
+
+.ui-checkbox__container {
+  @include flexBox(row, center, center);
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+
+  .ui-checkbox-wrapper--disabled & {
+    cursor: not-allowed;
+  }
+}
+
+.ui-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+
+  &:focus + .ui-checkbox {
+    @include boxShadow(0 0 0 3px rgba($login-primary, 0.3));
+    border-color: $login-primary;
+  }
+
+  &:focus:not(:focus-visible) + .ui-checkbox {
+    box-shadow: none;
+  }
+}
+
+.ui-checkbox {
+  @include flexBox(row, center, center);
+  border: 1px solid #cccccc;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  position: relative;
+
+  // Sizes
+  &--small {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .ui-checkbox__icon {
+      font-size: 12px;
+    }
+  }
+
+  &--medium {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .ui-checkbox__icon {
+      font-size: 12px;
+    }
+  }
+
+  &--large {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .ui-checkbox__icon {
+      font-size: 14px;
+    }
+  }
+
+  // States
+  &--checked {
+    background: #00b4e5;
+    border-color: #00b4e5;
+  }
+
+  &--disabled {
+    background: $alabaster-low;
+    border-color: $mercury;
+    cursor: not-allowed;
+
+    &.ui-checkbox--checked {
+      background: $silver-sand;
+      border-color: $silver-sand;
+    }
+  }
+
+  &--error {
+    border-color: $failed-red;
+
+    &.ui-checkbox--checked {
+      background: $failed-red;
+      border-color: $failed-red;
+    }
+  }
+
+  // Hover effects
+  &:hover:not(.ui-checkbox--disabled) {
+    border-color: #00b4e5;
+
+    &.ui-checkbox--checked {
+      background: #0099cc;
+      border-color: #0099cc;
+    }
+  }
+}
+
+.ui-checkbox__icon {
+  color: $white-color;
+  line-height: 1;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+
+  .ui-checkbox--disabled & {
+    color: $sonic-silver;
+  }
+
+  .ui-checkbox--error & {
+    color: $white-color;
+  }
+}
+
+.ui-checkbox__label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #777777;
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+
+  .ui-checkbox-wrapper--disabled & {
+    color: $sonic-silver;
+    cursor: not-allowed;
+  }
+}
+
+.ui-checkbox__error {
+  @include fontValues(12px, 400, normal, normal, 1.4, normal);
+  color: $failed-red;
+  margin-top: 0.25rem;
+  margin-left: calc(18px + 0.5rem); // offset by checkbox width + gap
+}

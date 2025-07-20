@@ -1,6 +1,6 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { MainLayout } from './components'
-import Login from './pages/Login'
+import Login from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import Workflow from './pages/Workflow'
 import './App.scss'
@@ -15,7 +15,7 @@ function App() {
       <Route path="/*" element={
         <MainLayout>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/workflow" element={<Workflow />} />
             

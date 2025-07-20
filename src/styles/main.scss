@@ -1,0 +1,550 @@
+@use "./base.scss" as *;
+@use "./mixins.scss" as *;
+@use "./colors.scss" as *;
+@use "./breakpoints.scss" as *;
+@use "./components/modal.scss" as *;
+@use "./components/select.scss" as *;
+@use "./components/card.scss" as *;
+@use "./components/app.scss" as *;
+
+// UI Component Styles
+@use "../components/UI/Input/Input.scss" as *;
+@use "../components/UI/Button/Button.scss" as *;
+@use "../components/UI/Checkbox/Checkbox.scss" as *;
+@use "../components/UI/Logo/Logo.scss" as *;
+@use "../components/LoginLayout/LoginLayout.scss" as *;
+
+// Layout Component Styles
+@use "../components/Layout/Header/Header.scss" as *;
+@use "../components/Layout/Sidebar/Sidebar.scss" as *;
+@use "../components/Layout/AppLayout/AppLayout.scss" as *;
+
+body {
+  --primary-blue: #00b4e5;
+  --primary-purple: #592d83;
+  --sidebar-background: #fff;
+  --sidetabs-color: #fff;
+  --sidetabs-bg: #00b2e3;
+  --sidetabs-font-color: #2a2d2e;
+  --primary-blue-one: rgba(0, 180, 229, 0.1);
+  --primary-button: var(--primary-blue);
+  //
+  --input-border-focus: var(--primary-blue);
+  --menubar-font: #2a2d2e;
+  --menubar-divider: rgba(42, 45, 46, 0.1);
+  --notification-icon: #eeeeee;
+  --user-icon: #fff;
+  --main-navbar-background: #ffffff;
+  --blue-dropdown: #e3f4f8;
+  --filter-icon-hover: rgba(0, 180, 229, 0.1);
+  --main-container-workflow: #f6f9f9;
+  --tick-blue-color: #1890ff;
+  --sonic-silver: #777777;
+  --dropdown-primary: #00b4e1;
+  --notification-icon-bg-color: #00b4e1;
+  --primary-blue-hover: #e4f3ff;
+  --silver-sand: #bebfc0;
+  --white-color: #ffffff;
+  --primary-water: #d9f4fb;
+  --mint-cream: #f7fdfe;
+  --cyan: #00b2e3;
+  --active-navbar-icon-color: #fff;
+  --table-header-bg-color: #ffffff;
+  --table-header-font-color: #2a2d2e;
+  --table-border-color: #f0f0f0;
+
+  &[data-ehr-type="nextgen"] {
+    --primary-blue: #c76e4d;
+    --dropdown-primary: #c76e4d;
+    --notification-icon-bg-color: #c76e4d;
+    --primary-purple: #c45334;
+    --sidebar-background: #ffffff;
+    --sidetabs-color: #c76e4d;
+    --sidetabs-bg: #fdf4f1;
+    --primary-blue-hover: #fdf4f1;
+    --sidetabs-font-color: #333232;
+    --primary-blue-one: #fdf4f1;
+    --primary-button: #c76e4d;
+    --input-border-focus: #c76e4d;
+    --menubar-font: #333232;
+    --menubar-divider: rgba(42, 45, 46, 0.1);
+    --notification-icon: #ffffff;
+    --user-icon: #ffffff;
+    --main-navbar-background: #ffffff;
+    --blue-dropdown: #fdf4f1;
+    --filter-icon-hover: #fdf4f1;
+    --main-container-workflow: #fefbf9;
+    --tick-blue-color: var(--primary-blue);
+    --sonic-silver: #777777;
+    --silver-sand: #bebfc0;
+    --white-color: #ffffff;
+    --active-navbar-icon-color: #c76e4d;
+    --table-header-bg-color: #ffffff;
+    --table-header-font-color: #2a2d2e;
+    --table-border-color: #f0f0f0;
+  }
+
+  &[data-ehr-type="cerner"] {
+    --primary-blue: #8395cb;
+    --dropdown-primary: #8395cb;
+    --notification-icon-bg-color: #8395cb;
+    --primary-purple: #576396;
+    --sidebar-background: #ffffff;
+    --sidetabs-color: #ffffff;
+    --sidetabs-bg: #8395cb;
+    --primary-blue-hover: #fdf4f1;
+    --sidetabs-font-color: #333232;
+    --primary-blue-one: #abb1c4;
+    --primary-button: #8395cb;
+    --input-border-focus: #8395cb;
+    --menubar-font: #333232;
+    --menubar-divider: rgba(42, 45, 46, 0.1);
+    --notification-icon: #ffffff;
+    --user-icon: #ffffff;
+    --main-navbar-background: #ffffff;
+    --blue-dropdown: #abb1c4;
+    --filter-icon-hover: #fdf4f1;
+    --main-container-workflow: #fefbf9;
+    --tick-blue-color: var(--primary-blue);
+    --sonic-silver: #777777;
+    --silver-sand: #bebfc0;
+    --white-color: #ffffff;
+    --mint-cream: var(--primary-blue-hover);
+    --primary-water: #c5c9d7;
+    --cyan: var(--primary-blue);
+    --active-navbar-icon-color: #ffffff;
+    --table-header-bg-color: #ffffff;
+    --table-header-font-color: #2a2d2e;
+    --table-border-color: #f0f0f0;
+  }
+  &[data-ehr-type="practice-edition"] {
+    --primary-blue: #27557e;
+    --dropdown-primary: #27557e;
+    --notification-icon-bg-color: #ffffff;
+    --primary-purple: #255b8a;
+    --sidebar-background: #ffffff;
+    --sidetabs-color: #ffffff;
+    --sidetabs-bg: #27557e;
+    --primary-blue-hover: #fdf4f1;
+    --sidetabs-font-color: #333232;
+    --primary-blue-one: #abb1c4;
+    --primary-button: #27557e;
+    --input-border-focus: #27557e;
+    --menubar-font: #ffffff;
+    --menubar-divider: rgba(255, 255, 255, 0.9);
+    --notification-icon: #27557e;
+    --user-icon: #27557e;
+    --main-navbar-background: #27557e;
+    --blue-dropdown: #abb1c4;
+    --filter-icon-hover: #fdf4f1;
+    --main-container-workflow: #fefbf9;
+    --tick-blue-color: var(--primary-blue);
+    --sonic-silver: #777777;
+    --silver-sand: #bebfc0;
+    --white-color: #ffffff;
+    --mint-cream: var(--primary-blue-hover);
+    --primary-water: #c5c9d7;
+    --cyan: var(--primary-blue);
+    --active-navbar-icon-color: #ffffff;
+    --table-header-bg-color: var(--primary-blue);
+    --table-header-font-color: #ffffff;
+    --table-border-color: none;
+  }
+  &[data-ehr-type="veradigm"] {
+    --primary-blue: #403c7e;
+    --dropdown-primary: #403c7e;
+    --notification-icon-bg-color: #403c7e;
+    --primary-purple: #576396;
+    --sidebar-background: #ffffff;
+    --sidetabs-color: #ffffff;
+    --sidetabs-bg: #403c7e;
+    --primary-blue-hover: #fdf4f1;
+    --sidetabs-font-color: #333232;
+    --primary-blue-one: #abb1c4;
+    --primary-button: #403c7e;
+    --input-border-focus: #403c7e;
+    --menubar-font: #333232;
+    --menubar-divider: rgba(42, 45, 46, 0.1);
+    --notification-icon: #ffffff;
+    --user-icon: #ffffff;
+    --main-navbar-background: #ffffff;
+    --blue-dropdown: #abb1c4;
+    --filter-icon-hover: #fdf4f1;
+    --main-container-workflow: #fefbf9;
+    --tick-blue-color: var(--primary-blue);
+    --sonic-silver: #777777;
+    --silver-sand: #bebfc0;
+    --white-color: #ffffff;
+    --mint-cream: var(--primary-blue-hover);
+    --primary-water: #c5c9d7;
+    --cyan: var(--primary-blue);
+    --active-navbar-icon-color: #ffffff;
+    --table-header-bg-color: #ffffff;
+    --table-header-font-color: #2a2d2e;
+    --table-border-color: #f0f0f0;
+  }
+  * {
+    @include custom-scrollbar(); // for scrollbar in all pages
+  }
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.inner-content-wrapper {
+  flex: 1;
+  padding: 2.7rem 2.3rem 1.1rem;
+  overflow: hidden;
+  overflow-y: auto;
+  @include custom-scrollbar();
+}
+
+.inner-content-wrapper-scrollable {
+  border: 0.1rem solid $gallery;
+  overflow: auto;
+  height: 100%;
+  max-height: 100%;
+  background-color: white;
+  @include custom-scrollbar();
+
+  .ant-card {
+    &.ant-card-bordered {
+      border: none;
+    }
+  }
+}
+
+.common-white-button {
+  border-radius: 0.5rem;
+  border: solid 0.1rem $primary-blue;
+  padding: 0.6rem 1.2rem 0.5rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: $primary-blue;
+  cursor: pointer;
+}
+
+.common-primary-button {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  background-color: $primary-blue;
+  border: 0.1rem solid $primary-blue;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: $white-color;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.divider-heading {
+  width: 93%;
+  border-bottom: 0.1rem solid $mercury;
+  line-height: 0.1em;
+  text-align: center;
+  margin: 2rem auto 1.5rem;
+
+  .divider-details {
+    color: $darker-gray;
+    background: $white-color;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    position: relative;
+
+    .label-asteric {
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      color: $maroon-flush;
+    }
+  }
+}
+
+.ant-dropdown {
+  &.custom-icons-dropdown {
+    box-shadow: 0 0 0.6rem 0 $silver-shadow;
+    background-color: $white-color;
+    &.migrate-dropdown {
+      min-width: 1.4rem;
+      left: 97rem !important;
+      top: 40rem;
+    }
+    .ant-dropdown-menu {
+      &.ant-dropdown-menu-root {
+        padding: 0;
+
+        .ant-dropdown-menu-item {
+          @include flexBox(row, center);
+
+          padding: 0;
+
+          &:hover {
+            background-color: none;
+          }
+
+          > span {
+            width: 100%;
+          }
+
+          .actions-dropdown-title {
+            .disabled-tooltip {
+              cursor: not-allowed;
+              color: $silver-sand;
+            }
+
+            &.migrate-department-dropdown {
+              color: $black-color;
+            }
+            @include flexBox(row, center);
+            column-gap: 0.5rem;
+            height: 3.5rem;
+            padding: 0 1.4rem;
+            width: 100%;
+            font-size: 1.3rem;
+            color: $primary-button;
+
+            &.delete-title {
+              color: $cancel-red;
+            }
+
+            &.dark {
+              color: $dark-gray;
+            }
+
+            &.care-table-actions {
+              gap: 0.5rem;
+              color: #2a2d2e;
+
+              svg {
+                width: 2rem;
+              }
+            }
+
+            &:hover {
+              background-color: $primary-blue-one;
+            }
+
+            &.remove-button {
+              color: $maroon-flush;
+              position: static;
+
+              &:hover {
+                background-color: $maroon-flush-one;
+              }
+
+              .btn-content {
+                font-size: 1.3rem;
+                display: flex;
+                gap: 0.3rem;
+                svg {
+                  width: 1.5rem;
+                  height: 1.5rem;
+                  position: relative;
+                  top: 0.3rem;
+                }
+              }
+            }
+
+            &.menu-button {
+              color: $dark-gray;
+              .btn-content {
+                font-size: 1.3rem;
+                display: flex;
+                gap: 0.5rem;
+                svg {
+                  width: 1.8rem;
+                  height: 1.8rem;
+                  position: relative;
+                  top: 0.3rem;
+                }
+                &.edit {
+                  path {
+                    fill: $dark-gray;
+                  }
+                }
+                &.delete {
+                  path {
+                    fill: $cancel-red;
+                  }
+                }
+                &.preview {
+                  path {
+                    stroke: $dark-gray;
+                  }
+                }
+              }
+            }
+
+            &.deactivate-button {
+              color: $dark-gray;
+            }
+
+            &.activate-button {
+              color: $success-green;
+            }
+
+            &.disable-button {
+              color: $sonic-silver;
+              cursor: not-allowed;
+              &:hover {
+                background-color: rgba($sonic-silver, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  opacity: 1 !important;
+  pointer-events: unset !important;
+  animation: showDropdown 0.2s linear forwards !important;
+
+  &.slide-up-enter {
+    animation: none !important;
+  }
+}
+
+.add-edit-forms-container {
+  max-height: calc(100vh - 10rem);
+
+  .ant-card {
+    max-height: calc(100vh - 10rem);
+
+    .ant-card-body {
+      display: grid;
+      min-height: calc(100vh - 18rem);
+      background: $white-color;
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: block;
+        padding-bottom: 10rem;
+      }
+
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        content: none;
+      }
+
+      .inner-form-wrapper {
+        @include commonGrid(1fr, 0, 0, max-content);
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          display: block;
+        }
+
+        .generic-forms-wrapper {
+          align-self: flex-start;
+
+          .form-row,
+          .reschedule-row {
+            .ant-select {
+              @extend .ant-select;
+            }
+          }
+        }
+
+        .form-actions {
+          position: sticky;
+          bottom: -0.1rem;
+          z-index: 1;
+
+          @media all and (-ms-high-contrast: none),
+            (-ms-high-contrast: active) {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ml-8 {
+  margin-left: 0.8rem;
+}
+
+.mr-8 {
+  margin-left: 0.8rem;
+}
+
+@keyframes showDropdown {
+  from {
+    opacity: 0 !important;
+  }
+
+  to {
+    opacity: 1 !important;
+  }
+}
+
+.ant-pagination.ant-table-pagination.ant-table-pagination-right {
+  @include flexBox(row, center, flex-end);
+
+  margin: 0;
+  padding: 0 1.6rem;
+  height: 4.9rem;
+  font-size: 1.5rem;
+  color: $sonic-silver;
+  border-top: solid 0.1rem $gallery;
+
+  .ant-pagination-next,
+  .ant-pagination-prev {
+    .ant-pagination-item-link {
+      @include flexBox(row, center, center);
+
+      border: none;
+    }
+  }
+
+  .ant-pagination-item {
+    @include flexBox(row, center, center);
+
+    border: none;
+
+    &:hover {
+      color: $primary-blue;
+    }
+
+    &.ant-pagination-item-active {
+      color: $primary-blue;
+    }
+  }
+
+  &.pagination-center-aligned {
+    @include flexBox(row, center, center);
+    .ant-pagination-options {
+      @include flexBox(row, center, center);
+      .ant-pagination-options-size-changer .ant-select-selector,
+      .ant-pagination-options-quick-jumper input {
+        border-radius: 0.5rem;
+      }
+    }
+    &.mini {
+      @include flexBox(row, center, flex-end);
+    }
+  }
+}
+
+.error-text {
+  color: $maroon-flush;
+}
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+/* Removed conflicting .login-layout class that was overriding LoginLayout component */
+
+/* to-do: can remove after css class re-scoping css classes in agent chat app */
+.app-container .disabled {
+  opacity: initial;
+}

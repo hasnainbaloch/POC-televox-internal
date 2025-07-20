@@ -1,0 +1,47 @@
+// Logo Component Styles
+
+@use "../../../styles/colors.scss" as *;
+@use "../../../styles/mixins.scss" as *;
+@use "../../../styles/breakpoints.scss" as *;
+
+.ui-logo {
+  display: block;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+
+  // Size variants
+  &--small {
+    height: 24px;
+    max-width: 120px;
+  }
+
+  &--medium {
+    height: 32px;
+    max-width: 160px;
+  }
+
+  &--large {
+    height: 48px;
+    max-width: 240px;
+  }
+
+  &--xlarge {
+    height: 64px;
+    max-width: 320px;
+  }
+
+  // Variant specific adjustments
+  &--white {
+    // White logo typically used on dark backgrounds
+    filter: brightness(1);
+  }
+
+  &--housecalls {
+    // HouseCalls specific logo adjustments if needed
+  }
+
+  &--intrado {
+    // Intrado specific logo adjustments if needed
+  }
+}

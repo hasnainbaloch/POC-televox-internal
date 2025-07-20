@@ -1,0 +1,27 @@
+@use "./colors.scss" as colors;
+
+html {
+  font-size: 62.5%;
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background-color: colors.$main-container;
+
+    main {
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+body
+  > iframe[style*="2147483647"]:not([id="webpack-dev-server-client-overlay"]) {
+  display: none;
+}

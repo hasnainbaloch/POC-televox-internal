@@ -1,0 +1,153 @@
+$white-color: #ffffff;
+$black-color: #000000;
+$ms-logo-blue: #2196f3;
+$primary-blue-faded: #50bbd6;
+$dodger-blue: #40a9ff;
+$dodger-blue-dark: #1890ff;
+$primary-blue-tabs: #00b4e3;
+$green-indicator: #00e01a;
+$notification-error: #f8e9e9;
+$main-container: #f6f9f9;
+$tabs-loading-gray: #f5f6f6;
+$alabaster: #fafafa;
+$light-orange: #db7f14;
+$alabaster-low: #f5f5f5;
+$white-ice: #f2fafd;
+$seashell: #f1f1f1;
+$gallery: #f0f0f0;
+$willow-brook: #e1f2ee;
+$maroon-flush: #b1203d;
+$maroon-flush-lite: #f7e8eb;
+$maroon-flush-one: rgba(177, 32, 61, 0.1);
+$mercury-lite: #e3e3e5;
+$mercury: #e4e4e4;
+$mercury-dark: #e6e6e6;
+$mercury-darkest: #e5e5e5;
+$blue-chalk: #ebe6ff;
+$alto: #d9d9d9;
+$greyish: #dbdada;
+$silver-lite: rgba(204, 204, 204, 0.451);
+$silver-sand: #bebfc0;
+$sonic-silver: #777777;
+$dark-gray: #2b2d2f;
+$darker-gray: #2a2d2e;
+$darkest-gray: #222222;
+$ms-logo-yellow: #ffc107;
+$success-green: #00a880;
+$sucess-light-navy-blue: #403c7e;
+$floral-white: #fdfbef;
+$apple: #4c8833;
+$ms-logo-green: #4caf50;
+$low-opacity-grey: rgba(204, 204, 204, 0.5);
+$mid-black: rgba(0, 0, 0, 0.45);
+$silver-shadow: rgba(197, 197, 197, 0.5);
+$silver-shadow-dark: rgba(197, 197, 197, 0.16);
+$sidebar-shadow: rgba(200, 200, 200, 0.16);
+$card-shadow: rgba(0, 0, 0, 0.16);
+$tabs-shadow: rgba(0, 0, 0, 0.1);
+$notification-shadow: rgba(0, 0, 0, 0.3);
+$popup-shadow: rgba(0, 0, 0, 0.08);
+$notification-error-shadow: rgba(0, 0, 0, 0.12);
+$charts-tooltip-shadow: rgba(0, 0, 0, 0.15);
+$apple-mid: rgba(76, 136, 51, 0.5);
+$input-placeholder-color: rgba(42, 45, 46, 0.3);
+$filter-tag-background: rgba(119, 119, 119, 0.1);
+$dropdown-primary-nextgen: #2094d3;
+$dropdown-primary-one: rgba(0, 180, 225, 0.1);
+$dropdown-primary-one-nextgen: rgba(32, 148, 211, 0.1);
+$success-green-hover: rgba(0, 168, 129, 0.3);
+$primary-purple-light: #f0e5fa;
+$cancel-red: rgb(215, 31, 31);
+$warning-red: #fbf4f5;
+$dashboard-background: #fafafa;
+$chat-left-container: #d3ecff;
+$chat-right-container: #e6e6e6;
+$chinese-silver: #ccc;
+$regalia: #582d82;
+$dust-storm: #ebc7ce;
+$warning-yellow: #f7f0bf;
+$warning-yellow-bg: #fefdf6;
+$complete-green: #bfe9df;
+$hawkes-blue: #c5e3ff;
+$alice-blue: #f0f8ff;
+$light-black: #222;
+$light-blue: #00b4e1;
+$light-blue-bg: #d9f4fb;
+$light-grey-bg: rgba(255, 255, 255, 0.5);
+$search-marker: rgba(0, 178, 227, 0.42);
+$spinner-bg: rgba(255, 255, 255, 0.3);
+$light-grey-border: #eaebeb;
+$blank-slate-gray: #ddd;
+$sky-blue: #cff4fc;
+$charcoal-color: #111;
+$medium-dark-gray: #666;
+$warn-yellow: #e2c500;
+$orange: #f3c98b;
+$light-greyish: #c5c9d7;
+$light-green-bg: #ecf9f6;
+$dark-orange: #e79217;
+$smoke-gray: #8b8b8b;
+$extra-light-bg: #f7fdfe;
+$failed-red: #b1203d;
+$message-delivered: #d97706;
+
+$cyan: var(--cyan);
+$mint-cream: var(--mint-cream);
+$water: var(--primary-water);
+$primary-blue: var(--primary-blue);
+$primary-water: var(--primary-water);
+$primary-purple: var(--primary-purple);
+$sidebar-background: var(--sidebar-background);
+$sidetabs-color: var(--sidetabs-color);
+$sidetabs-bg: var(--sidetabs-bg);
+$sidetabs-font-color: var(--sidetabs-font-color);
+$primary-button: var(--primary-button);
+$input-border-focus: var(--input-border-focus);
+$primary-blue-one: var(--primary-blue-one);
+$menubar-font: var(--menubar-font);
+$menubar-divider: var(--menubar-divider);
+$notification-icon: var(--notification-icon);
+$user-icon: var(--user-icon);
+$main-navbar-background: var(--main-navbar-background);
+$blue-dropdown: var(--blue-dropdown);
+$filter-icon-hover: var(--filter-icon-hover);
+$main-container-workflow: var(--main-container-workflow);
+$tick-blue-color: var(--tick-blue-color);
+$ant-tab-active-background: var(--primary-blue-one);
+$dropdown-primary: var(--dropdown-primary);
+$primary-blue-hover: var(--primary-blue-hover);
+$promotional-green: #8fc852;
+$light-blue-bg: #e6f8fd;
+$light-green: #e8fee4;
+$active-navbar-icon-color: var(--active-navbar-icon-color);
+$table-header-bg-color: var(--table-header-bg-color);
+$table-header-font-color: var(--table-header-font-color);
+$table-border-color: var(--table-border-color);
+$notification-icon-bg-color: var(--notification-icon-bg-color);
+$low-priority: #5aac44;
+$medium-priority: #e6c60e;
+$high-priority: #d97706;
+$critical-priority: #b1203d;
+
+@use "sass:color";
+
+// Login Page Design Tokens
+$login-primary-value: #00b4e5; // Actual color value for Sass functions
+$login-primary: $login-primary-value; // Use the value directly
+$login-background: $white-color;
+$login-text-primary: $darker-gray; // #2a2d2e
+$login-text-secondary: $sonic-silver; // #777777
+$login-input-border: $gallery; // #f0f0f0
+$login-input-border-focus: $login-primary;
+$login-input-placeholder: $input-placeholder-color; // rgba(42, 45, 46, 0.3)
+$login-gradient-start: $login-primary-value;
+$login-gradient-end: color.adjust($login-primary-value, $lightness: 10%);
+$login-shadow: $card-shadow; // rgba(0, 0, 0, 0.16)
+$login-link-color: $login-primary-value;
+$login-button-hover: color.adjust($login-primary-value, $lightness: -8%);
+
+// Microsoft Button specific
+$microsoft-button-bg: $white-color;
+$microsoft-button-border: $mercury; // #e4e4e4
+$microsoft-button-text: $darker-gray;
+$microsoft-button-hover: $alabaster; // #fafafa

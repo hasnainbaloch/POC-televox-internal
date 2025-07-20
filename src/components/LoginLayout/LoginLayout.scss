@@ -1,0 +1,258 @@
+// LoginLayout Component Styles
+// Implements the split-screen design from Figma
+
+@use "../../styles/colors.scss" as *;
+@use "../../styles/mixins.scss" as *;
+@use "../../styles/breakpoints.scss" as *;
+
+.login-layout {
+  @include flexBox(row, stretch, flex-start);
+  flex-direction: row !important;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+
+  // Left Side - Branding
+  &__branding {
+    width: 50%;
+    height: 100vh;
+    background: #00b4e5;
+    position: relative;
+    overflow: hidden;
+
+    // Background pattern/gradient from Figma
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url("../../images/login/televox-bg.png");
+      background-size: cover;
+      z-index: 1;
+    }
+
+    // Watermark TeleVox logo
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1804px;
+      left: -700px;
+      opacity: 0.07;
+      overflow: hidden;
+      top: 196px;
+      width: 1563px;
+      background-image: url("../../images/login/televox-logo-white.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 2;
+    }
+  }
+
+  &__branding-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    width: 413px;
+    @include flexBox(column, center, center);
+    gap: 16px;
+  }
+
+  &__logo-container {
+    position: absolute;
+    bottom: 92.5%;
+    left: 5.208%;
+    right: 80.782%;
+    top: 4.167%;
+    z-index: 4;
+
+    // White logo mask
+    .ui-logo {
+      height: 36px;
+      left: 50px;
+      mask-size: 134.491px 36px;
+      top: 45px;
+      width: 134.491px;
+    }
+  }
+
+  &__hero {
+    color: #ffffff;
+    @include flexBox(column, center, center);
+    gap: 16px;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 36px;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    width: 413px;
+  }
+
+  // Right Side - Form
+  &__form-section {
+    width: 50%;
+    height: 100vh;
+    @include flexBox(column, center, center);
+
+    background: #fafafa;
+    box-sizing: border-box;
+  }
+
+  &__form-container {
+    width: 400px;
+    @include flexBox(column, stretch, flex-start);
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  &__form-header {
+    @include flexBox(column, stretch, flex-start);
+    gap: 8px;
+  }
+
+  &__form-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #2a2d2e;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__form-description {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #777777;
+    margin: 0;
+    text-align: left;
+  }
+
+  &__form {
+    width: 100%;
+    @include flexBox(column, stretch, flex-start);
+    gap: 40px;
+  }
+
+  &__field {
+    width: 100%;
+    @include flexBox(column, stretch, flex-start);
+    gap: 8px;
+    text-align: left;
+  }
+
+  &__form-options {
+    @include flexBox(row, center, space-between);
+    width: 100%;
+  }
+
+  &__checkbox-container {
+    @include flexBox(row, center, flex-start);
+  }
+
+  &__forgot-password {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: #00b4e5;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__actions {
+    width: 100%;
+    @include flexBox(column, stretch, center);
+    gap: 24px;
+  }
+
+  &__divider {
+    position: relative;
+    width: 328px;
+    height: 0;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: -0.5px;
+      height: 1px;
+      background: #cccccc;
+    }
+  }
+
+  &__divider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #cccccc;
+    background: #fafafa;
+    padding: 0 10px;
+  }
+
+  &__microsoft-login {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus {
+      outline: 2px solid #00b4e5;
+      outline-offset: 2px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
